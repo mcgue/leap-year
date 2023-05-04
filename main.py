@@ -6,10 +6,14 @@ def explanation():
 
 def calculate(year):
     # Divide by 4
-    if year % 4 == 0:
-        return "This is a leap year"
+    #if year >
+    if year % 400 == 0:
+        if year % 4 == 0:
+            return "This is a leap year with an extra day on February 29th"
+    elif (year % 400 != 0) or (year % 4 != 0):
+        return "This is not a leap year"
     else:
-        return "probably not"
+        return "huh?"
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ def explanation():
 
 def calculate(year):
     # Divide by 4
-    if year > 0:
+    if year >= 1582:
         if year % 400 == 0:
             if year % 4 == 0:
                 return "This is a leap year with an extra day on February 29th"
@@ -14,9 +14,11 @@ def calculate(year):
             return "This is not a leap year"
         else:
             return "huh?"
-    else:
-        if year > -45:
-            return "Thi"
+    elif year > -46:
+        return "This was a year during the Julian Calendar.\n" \
+               "At the time, leap day was February 24.\n" \
+               "February was the last month of the year."
+
 
 
 if __name__ == '__main__':

@@ -6,18 +6,20 @@ def explanation():
 
 def calculate(year):
     # Divide by 4
+    if year % 4 != 0:
+        return "This is not a leap year"
     if year >= 1582:
-        if year % 400 == 0:
-            if year % 4 == 0:
-                return "This is a leap year with an extra day on February 29th"
-        elif (year % 400 != 0) or (year % 4 != 0):
-            return "This is not a leap year"
+        if (year % 4 == 0 and year % 400 == 0):
+            return "This is a leap year with an extra day on February 29th"
         else:
-            return "huh?"
+            return "This is not a leap year"
+        #elif (year % 400 != 0) or
     elif year > -46:
         return "This was a year during the Julian Calendar.\n" \
                "At the time, leap day was February 24.\n" \
                "February was the last month of the year."
+    else:
+        return "huh?"
 
 
 

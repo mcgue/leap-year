@@ -5,6 +5,10 @@ def explanation():
     print("I can determine if any year is a leap year")
 
 def calculate(year):
+    # Leap years not invented yet
+    if year < -45:
+        return "Leap years had not started yet. Caesar implemented \n" \
+               "them in 45 bce."
     # Divide by 4
     if year % 4 != 0:
         return "This is not a leap year"

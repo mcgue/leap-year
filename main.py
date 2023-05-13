@@ -1,9 +1,6 @@
 # Calculate whether a year is a leap year
 
-def explanation():
-    # Print what the program is about
-    print("I can determine if any year is a leap year")
-
+# Function to calculate whether a leap year
 def calculate(year):
     # Leap years not invented yet
     if year < -45:
@@ -13,7 +10,7 @@ def calculate(year):
     elif year % 4 != 0:
         return "This is not a leap year"
     elif year >= 1582:
-        if (year % 4 == 0 and year % 400 == 0):
+        if (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)):
             return "For those places using the Gregorian \n" \
                     "calendar, this is/was a leap year with \n" \
                     "an extra day on February 29th"
@@ -26,7 +23,8 @@ def calculate(year):
 
 if __name__ == '__main__':
     # Introduce program
-    explanation()
+    print("I can determine if any year is a leap year")
     # Get input
     year = int(input("Enter the year would you like to check: "))
+    # Run program to determine whether year is a leap year
     print(calculate(year))

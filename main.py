@@ -1,7 +1,11 @@
 # Calculate whether a year is a leap year
 
+from datetime import datetime
+
 # Function to calculate whether a leap year
 def calculate(year):
+    # Determine is past or future
+    today = datetime.now().year
     # Leap years not invented yet
     if year < -45:
         return "Leap years had not started yet. Caesar implemented \n" \
@@ -10,9 +14,15 @@ def calculate(year):
     elif year % 4 != 0:
         return "This is not a leap year"
     elif year >= 1582:
+        if year == today:
+            verb = 'is'
+        elif year > today:
+            verb = 'will be'
+        else:
+            verb = 'was'
         if (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)):
             return "For those places using the Gregorian \n" \
-                    "calendar, this is/was a leap year with \n" \
+                    f"calendar, this {verb} a leap year with \n" \
                     "an extra day on February 29th"
         else:
             return "This is not a leap year"
@@ -26,5 +36,5 @@ if __name__ == '__main__':
     print("I can determine if any year is a leap year")
     # Get input
     year = int(input("Enter the year would you like to check: "))
-    # Run program to determine whether year is a leap year
+    # Run function to determine whether year is a leap year
     print(calculate(year))

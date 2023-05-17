@@ -9,19 +9,22 @@ def calculate(year):
     # if current year
     if year == today:
         verb = 'is'
+        verb_neg = verb
     # If in the future
     elif year > today:
         verb = 'will be'
+        verb_neg = 'will not be'
     # If the past
     else:
         verb = 'was'
+        verb_neg = verb
     # If before leap year invention
     if year < -45:
-        return "Leap years had not started yet. Caesar implemented \n" \
-               "them in 45 bce."
+        return "Leap years had not yet started. Caesar implemented \n" \
+               "them in 45 BCE."
     # If not divisible by 4
     elif year % 4 != 0:
-        return f"This {verb} not a leap year"
+        return f"This {verb_neg} a leap year"
     # If after implementation of Gregorian calendar
     elif year >= 1582:
         # Yes to leap year if divisible by 4 and only years divisible by 400
@@ -30,7 +33,7 @@ def calculate(year):
                     f"calendar, this {verb} a leap year with \n" \
                     "an extra day on February 29th"
         else:
-            return f"This {verb} not a leap year"
+            return f"This {verb_neg} a leap year"
     # Remaining are leap years in Julian Calendar
     else:
         return "This was a leap year during the Julian Calendar.\n" \

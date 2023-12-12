@@ -1,3 +1,3 @@
 # leap-year
-## Calculates whether a year is a leap year
-### Status: finished 
+Calculates whether a year is a leap year<br>
+Status: finished 
